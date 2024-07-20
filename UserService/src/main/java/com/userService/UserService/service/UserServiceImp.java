@@ -34,8 +34,12 @@ public class UserServiceImp implements UserService {
 
     @Override
     public UserDto addUser(UserDto userDto) {
-        userDto.setPassword(passwordEncoder.encode(userDto.getPassword()));
-        return modelMapper.map(userRepo.save(modelMapper.map(userDto, User.class)), UserDto.class);
+       String encryptPassword = passwordEncoder.encode(userDto.getPassword());
+       userDto.setPassword(encryptPassword);
+       User user = modelMapper.map(userDto, User.class);
+       user.setPassword(encryptPassword);
+       return modelMapper.map(userRepo.save(user), UserDto.class);
+
     }
 
     @Override

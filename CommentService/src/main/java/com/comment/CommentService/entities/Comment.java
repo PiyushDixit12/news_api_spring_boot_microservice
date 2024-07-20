@@ -13,6 +13,10 @@ public class Comment {
 
     private String content;
 
+    private long postId;
+
+    private long userId;
+
 //    @ManyToOne
 //    @JoinColumn(name = "post_id")
 //    private Post post;

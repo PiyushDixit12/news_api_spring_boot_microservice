@@ -1,9 +1,12 @@
 package com.posts.PostService.entities;
 
+import com.posts.PostService.payload.CommentDto;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "posts")
@@ -20,4 +23,9 @@ public class Post {
     private String imageName;
 
     private Date addedDate;
+
+    private  long userId;
+
+    private long categoryId;
+
 }
