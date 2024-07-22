@@ -13,6 +13,11 @@ public class RouteValidator {
             "/api/user",
             "/api/user/login",
             "/api/user/valid-token/{token}",
+            "/swagger-ui.html",
+            "/swagger-ui/**",
+            "/v3/api-docs/**",
+            "/swagger-ui.html",
+            "/error",
             "/eureka"
     );
 
